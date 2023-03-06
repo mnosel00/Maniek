@@ -67,7 +67,7 @@ for (int i = 0; i < primeNumbers.Count; i++)
 Console.WriteLine();
 
 Console.WriteLine("Liczby czworacze: ");
-foreach (var quad in quadList)
+foreach (var item in quadList)
 {
-    Console.WriteLine(quad);
+    Console.WriteLine(item);
 }
