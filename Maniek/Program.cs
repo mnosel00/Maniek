@@ -41,9 +41,33 @@ foreach (var item in primeNumbers2)
 }
 
 Console.WriteLine("Liczby pierwsze mniejsze od {0} to:", n);
-foreach (var prime in primeNumbers)
+foreach (var item in primeNumbers)
 {
-    Console.Write(prime + " ");
+    Console.Write(item + " ");
 }
 
+List<string> quadList = new List<string>();
 
+for (int i = 0; i < primeNumbers.Count; i++)
+{
+    for (int j = i + 1; j < primeNumbers.Count; j++)
+    {
+        for (int k = j + 1; k < primeNumbers.Count; k++)
+        {
+            for (int l = k + 1; l < primeNumbers.Count; l++)
+            {
+                if (primeNumbers[j] - primeNumbers[i] == primeNumbers[k] - primeNumbers[j] && primeNumbers[k] - primeNumbers[j] == primeNumbers[l] - primeNumbers[k])
+                {
+                    quadList.Add($"{primeNumbers[i]} {primeNumbers[j]} {primeNumbers[k]} {primeNumbers[l]}");
+                }
+            }
+        }
+    }
+}
+Console.WriteLine();
+
+Console.WriteLine("Liczby czworacze: ");
+foreach (var quad in quadList)
+{
+    Console.WriteLine(quad);
+}
